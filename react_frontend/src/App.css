@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1F2327;
+    color: white;
+    font-family: "Helvetica", sans-serif;
+}
+
+.nav_is_active {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transition: margin-left .5s;
+  margin-left: 250px;
+}
+.nav_is_not_active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 130px;
+  transition: margin-left .7s;
+}

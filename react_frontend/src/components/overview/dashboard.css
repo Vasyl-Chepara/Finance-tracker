@@ -1,0 +1,119 @@
+p.name {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 0;
+    font-size: 25px;
+}
+p.label{
+    color: rgb(219, 219, 219);
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.parent-content{
+    width: 85vw;
+}
+
+.content{ 
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto auto auto;
+    grid-gap: 20px;
+    padding-left: 20px;
+    margin-right: 20px;
+    background: #1F2327;
+}
+
+.timeseries_graph {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    border-radius: 25px;
+    background: #272B2F;
+    margin-top: 10px;
+    padding: 10px;
+    height: auto;
+}
+
+.graph_container{
+    width: 100%;
+    height: 85%;
+}
+.pie_chart{
+    grid-column: 3 ;
+    grid-row: 1;
+    color: rgb(219, 219, 219);
+    border-radius: 25px;
+    background: #272B2F;
+    margin-top: 10px;
+    padding: 10px;
+    height: auto;
+}
+
+.pie_container{
+    color: rgb(219, 219, 219);
+    height: 30vh;
+}
+
+.plate {
+    color: rgb(219, 219, 219);
+    border-radius: 25px;
+    background: #272B2F;
+    margin-top: 10px;
+    padding: 10px;
+    height: 35vh;
+}
+
+.container{
+    height: 30vh;
+}
+
+.expenses_container, .invests_container, .savings_container{
+    grid-row: 2 ;
+}
+ .expenses_container{
+    grid-column: 1 ;
+ }
+ .invests_container{
+    grid-column: 2 ;
+ }
+ .savings_container{
+    grid-column: 3 ;
+ }
+
+
+ .separate{
+    display: block;
+    background: #929292;
+    border-radius: 3px;
+    height: 2px;
+    width: 98%;
+    margin-bottom: 10px;
+} 
+
+.transactions-label {
+    color: rgb(219, 219, 219);
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.item{
+    margin: 10px 15px 15px 5px;
+    color: rgb(219, 219, 219);
+}
+
+
+.item_name {
+    margin-top: 4px;
+    margin-bottom: 5px;
+
+}
+
+.item_value {
+    margin-top: -23px;
+    margin-right: 10px;
+    display: block;
+    float: right;
+}
