@@ -31,6 +31,7 @@ var options = {
   },
 };
 
+
 class Expenseslinegraph extends React.Component {
   state = {
     labels: [],
@@ -55,13 +56,22 @@ class Expenseslinegraph extends React.Component {
   };
 
   componentDidUpdate(prevProps) {
+    
     if (this.props !== prevProps) {
+      const values = []
+      const dates = []
+      const sorted = Object.entries(this.props.data).sort((a, b) => new Date(b[0]) - new Date(a[0])).reverse()
+      for (var i of sorted) {
+        dates.push(i[0]);
+        values.push(i[1]);
+      }
       let chartData = this.state;
-      chartData.labels = Object.keys(this.props.data);
-      chartData.datasets[0].data = Object.values(this.props.data);
+      chartData.labels = dates
+      chartData.datasets[0].data = values
       this.setState({ chartData });
     }
   }
+
   render() {
     return <Line data={this.state} options={options} />;
   }

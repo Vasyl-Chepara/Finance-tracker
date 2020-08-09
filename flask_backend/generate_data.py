@@ -2,6 +2,7 @@ import sqlite3
 import random
 import numpy as np
 import collections
+import os
 
 
 def create_db():
@@ -40,6 +41,7 @@ def sort_data():
 	conn = sqlite3.connect('finance_database.db')
 	cursor = conn.cursor()
 	command = '''SELECT * FROM Financies LIMIT 5'''
+	# SELECT * FROM table limit 100, 200`
 	cursor.execute(command)
 	data = cursor.fetchall()
 	# print(data)
@@ -52,7 +54,8 @@ def sort_data():
 # ', 24.09), ('Car', '15/5/2020', 'Invests', 10.27),
 
 if __name__ == "__main__":
-	#create_db()
-	generate_data()
+	# create_db()
+	# generate_data()
 	#show_data()
 	#sort_data()
+	# print(os.getcwd())

@@ -3,11 +3,11 @@
 }
 
 .transactions-content{ 
+    overflow: auto;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
     justify-items: center;
-
     background: #1F2327;
 }
 

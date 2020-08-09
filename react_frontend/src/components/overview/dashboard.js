@@ -17,9 +17,10 @@ function round(value, decimals) {
 function create_item(item) {
   if (typeof(item[2]) == "undefined"){
     item[2] = 'Total: '
+    console.log()
   }
   return (
-    <div key={parseInt(item[1])} className="item">
+    <div key={item[0] + parseInt(item[1])} className="item">
       <div className="item_name">{item[0]}</div>
     
       <div className="item_value">
@@ -43,7 +44,7 @@ class DashBoard extends React.Component {
   
   constructor(props) {
     super(props);
-    fetch_data_from_api(GET_DATA_FOR_OVEVIEW)
+    fetch_data_from_api(GET_DATA_FOR_OVEVIEW);
   }
 
   componentDidUpdate(prevProps) {
@@ -54,7 +55,7 @@ class DashBoard extends React.Component {
 
   render() {
     return (
-      <div className="parent-content">
+      <div key='0' className="parent-content">
         <p className="name">Overview</p>
         <div className="content">
           <div className="timeseries_graph">
@@ -71,7 +72,7 @@ class DashBoard extends React.Component {
             </div>
           </div>
 
-          <div className="plate expenses_container">
+          <div key='1' className="plate expenses_container">
             <p className="label">Last 7 expenses</p>
             <div className="container">
             {this.state.data.Last_expenses.map(item => (create_item(item)))}
