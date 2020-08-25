@@ -21,10 +21,10 @@ def generate_data():
 	expenses_types = ['Rent apartments', 'Food', 'Car', 'Investments', 'Relax', 'Gifts']
 	transactions_types = ['Expenses', 'Invests', 'Savings']
 
-	for i in range(2000):
+	for i in range(120):
 		transaction = [random.choice(expenses_types), '{0}/{1}/2020'.format(random.randint(1, 28), random.randint(1, 7)), random.choice(transactions_types), round(random.uniform(1, 100),2) ]
 		cursor.executemany("INSERT INTO Financies VALUES (?,?,?,?)", (transaction,))
-		print(i/2000)
+		print(i/120)
 	
 	conn.commit()
 
@@ -40,7 +40,7 @@ def show_data():
 def sort_data():
 	conn = sqlite3.connect('finance_database.db')
 	cursor = conn.cursor()
-	command = '''SELECT * FROM Financies LIMIT 5'''
+	command = '''SELECT * FROM Financies LIMIT 1,180'''
 	# SELECT * FROM table limit 100, 200`
 	cursor.execute(command)
 	data = cursor.fetchall()
@@ -55,7 +55,7 @@ def sort_data():
 
 if __name__ == "__main__":
 	# create_db()
-	# generate_data()
+	generate_data()
 	#show_data()
-	#sort_data()
+	sort_data()
 	# print(os.getcwd())
